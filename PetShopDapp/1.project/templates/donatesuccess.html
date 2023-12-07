@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<center>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <form action="/donate" method="get">
+    <div class="jumbotron">
+      <h1 class="display-4">Thanks your donate!</h1><br>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+          </div>
+        </div>   
+      <hr class="my-4">
+      <p>All your donations are used to save animals.</p><br>
+      <button class="btn btn-primary btn-lg" name="back" type="submit" >Back</button><br><br>
+      <h1 class="display-4">Contract Balance:</h1><br>
+      <h1 class="display-4">{{con_balance/1000000000000000000}} ETH</h1>      
+    </div>
+  </form>
+</center>
+
+
+
+
+{% endblock %}

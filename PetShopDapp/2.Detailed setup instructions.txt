@@ -1,0 +1,61 @@
+Using Python:
+Python version v3.7.6,
+flask version  v1.1.2,
+simplejson version v3.17.4,
+web3 version (Python) v5.23.0，
+Solidity version v0.5.16,
+Truffle version v5.1.32,
+Ganache version v2.5.4.
+
+PROGRAM PREPARATION
+1. create anaconda environment and active it by writing
+conda create --name Petshop python=3.7.6
+activate Petshop
+
+2.The following commands take place
+on anaconda prompt (Petshop environment):
+conda install spyder
+conda install flask@1.1.2
+pip install simplejson@3.17.4
+pip install Web3 version 5.23.0 by writing
+pip install Web3 --upgrade
+
+3.Compile the smart contract using truffle
+within the cmd  terminal go to the directory 
+PetShopDapp\1.project\contracts\ and write
+truffle compile 
+truffle migrate
+
+4.look at the hosts file in
+C:\Windows\System32\drivers\etc\hosts.txt
+to check that the local DNS resolution is the expected default which should be:
+127.0.0.1       localhost
+
+TO RUN THE PROGRAM
+The main program is petshop.py but you need to run 3 processes in parallel
+1. open a browser
+listening on localhost or 127.0.0.1:8080
+
+2. open a Ganache
+click quickstart to prepare the accounts
+
+3. in the anaconda command prompt
+activate Petshop
+spyder
+
+4. when the spyder opens
+open petshop.py and run it
+
+In the sypder standard output window you should see flask messages, at the bottom of all messages you should see:
+flask running on: http://127.0.0.1:8080/
+
+5. in the browser address box write:
+127.0.0.1:8080 (or just write "localhost" no quotes if the hosts file is set that way)
+enter 
+
+Now, you will go to the login page of petshop and
+click one account you want to login
+
+After login to a account, you can adopt/add/buy pets and donate ether.
+
+

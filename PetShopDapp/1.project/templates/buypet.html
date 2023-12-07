@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="row">
+{% for i in pet %}
+  <div class="column">
+    <div class="card">
+    <div class="card-header"><strong>{{ i.name }}</strong></div>
+    <img src={{i.picture}}>
+    <p><strong>Breed</strong>: {{i.breed}}</p>
+    <p><strong>Age</strong>: {{i.age}}</p>
+    <p><strong>Location</strong>: {{i.location}}</p>
+    <p><strong>Price</strong>: {{i.price}} Eth</p>
+    <p><strong>Owner</strong>: {{i.owner}}</p>
+	{% if i.purchased == False %}
+	<form action="/buypet" method="POST" >
+    	<button type="submit" class="btn btn-primary" value={{i.id}} name="petId">Buy</button><br>
+	</form>
+	{% else %}
+    <div>
+    	<button type="button" class="btn btn-primary" disabled>Purchased</button>
+    </div>
+    {% endif %}
+    </div>
+  </div>
+{% endfor %}
+</div>
+<br><br>
+{{msg['error']}}
+{% endblock %}

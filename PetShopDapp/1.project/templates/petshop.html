@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="row">
+{% for i in petdata %}
+  <div class="column">
+    <div class="card">
+    <div class="card-header"><strong>{{ i.name }}</strong></div>
+    <img src={{i.picture}}>
+    <p><strong>Breed</strong>: {{i.breed}}</p>
+    <p><strong>Age</strong>: {{i.age}}&#160;&#160;&#160;<strong>Liked</strong>: {{liked[i.id][1]}}</p>
+    <p><strong>Location</strong>: {{i.location}}</p>
+    <div class="row">
+    	{% if red[i.id] == "0x0000000000000000000000000000000000000000" %}
+        	<form action="/petshop" method="POST">
+                <button class="btn btn-primary btn-adopt" name="petid" type="submit" value={{i.id}}>Adopt</button>
+            </form>
+            {% else %}
+                <button type="button" class="btn btn-primary" disabled>Adopted</button>
+        {% endif %}
+    	{% if votestatus == True %}
+        	<button type="button" class="btn btn-primary" disabled>Liked</button>
+            {% else %}
+        	<form action="/vote" method="POST">
+                <button class="btn btn-primary btn-adopt" name="petid" type="submit" value={{i.id}}>Like</button>
+            </form>
+
+        {% endif %}
+        </div>
+    </div>
+  </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

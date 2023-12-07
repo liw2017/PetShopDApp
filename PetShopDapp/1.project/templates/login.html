@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="row">
+{% for accountkey in w3account %}
+
+<div class="card">
+    <p>account No.: {{w3account.index(accountkey)+1}}</p>
+    <p>account public key:<br> {{accountkey}}</p>
+    <form action="/loginsuccess" method="POST">
+        <button class="btn btn-primary btn-adopt" name="accountkey" type="submit" value={{w3account.index(accountkey)}}>login</button>
+    </form>
+</div>
+
+{% endfor %}
+</div>
+
+
+
+{% endblock %}

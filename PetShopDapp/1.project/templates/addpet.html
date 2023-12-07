@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+{% block content %}
+<br><br><br><br>
+<div class="card">
+    <div class="card-header">
+      <h1>Add Pets</h1>
+    </div>
+    <div class="card-body">
+        <form class="addPet" action="/addpet" method="post">
+          <!-- input pet name-->
+          <div class="form-group">
+        <label for="petname">Pet Name</label>
+        <input type="text" class="form-control" id="petname" name="petname">
+          </div>
+          <!-- input pet breed-->
+          <div class="form-group">
+        <label for="petbreed">Pet Breed</label>
+        <select class="form-control" id="petbreed" name="petbreed">
+          <option>Scottish Terrier</option>
+          <option>French Bulldog</option>
+          <option>Boxer</option>
+          <option>Golden Retriever</option>
+        </select>
+          </div>
+          <!-- input pet age-->
+          <div class="form-group">
+        <label for="petage">Pet Age</label>
+        <select class="form-control" id="petage" name="petage">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+        </select>
+          </div>
+          <!-- input pet location-->
+          <div class="form-group">
+        <label for="petlocation">Pet Location</label>
+        <input type="text" class="form-control" id="petlocation" name="petlocation">
+          </div>
+        <!-- input pet price-->
+          <div class="form-group">
+        <label for="petname">Pet Price(unit:Eth)</label>
+        <input type="text" class="form-control" id="petprise" name="petprice">
+          </div>
+          <!-- submit input-->
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+{{ msg['error']}}
+{% endblock %}
